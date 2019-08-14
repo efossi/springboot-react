@@ -40,8 +40,9 @@ Build the package
 ./mvnw package
 ```
 
-##Examples
-###Create a note
+## Examples
+
+### Create a note
 
 ```
 curl -i -H "Content-Type: application/json" -X POST -d '{"body" : "Go have fun!!!"}' http://localhost/api/notes
@@ -52,7 +53,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"body" : "Go have fun!!
 curl -i -H "Content-Type: application/json" -X POST -d '{"body" : "Go have some fun!!!"}' http://localhost/api/notes
 ```
 
-###Get all notes
+### Get all notes
 
 This endpoint supports pagination and sorting through the params: ```offset```, ```sort```, ```order```, ```max``` with the following default values: offset=0, sort="id", order="asc", max=10
 
@@ -61,31 +62,31 @@ The endpoint also supports the query string parameter ```query```. It can be use
 Some examples
 
 ```
-curl -i -H "Content-Type: application/json" -X GET http://localhost/api/notes
+curl -X GET http://localhost/api/notes
 ```
 
 ```
-curl -i -H "Content-Type: application/json" -X GET 'http://localhost/api/notes?offset=10&max=25&sort=body'
+curl 'http://localhost/api/notes?offset=0&max=25&sort=body'
 ```
 
 ```
-curl -i -H "Content-Type: application/json" -X GET 'http://localhost/api/notes?offset=10&max=25&sort=body&query=fun'
+curl 'http://localhost/api/notes?offset=0&max=25&sort=body&query=fun'
 ```
 
-###Update a note
+### Update a note
 curl -i -H "Content-Type: application/json" -X PUT -d '{"body" : "Go have as much fun as you can!!!"}' http://localhost/api/notes/1
 
-###Delete a note
+### Delete a note
 curl  -H "Content-Type: application/json" -X DELETE http://localhost/api/notes/2
 
-#Fronend
+# Fronend
 
 The Frontend is a React application that integrates with the Github REST API to search for issues in the Angular Github repo for the
 previous days (7 days be default).
 
 The results from the API are displayed, in HTML, the returned values with their title, body, user login, and assignee login.
 
-##Setup
+## Setup
 
 ### Make sure you have a proper dependencies installed
 
