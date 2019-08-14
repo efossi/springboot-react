@@ -56,7 +56,7 @@ class RecentIssuePage extends Component {
                     <IssueTodisplay   dataSheetId={'listData1'}   appActions={this.props.appActions} 
                     {...row} {...this.props} />;
                   return (
-                    <div key={row.details.number}>
+                    <div className="section-box" key={row.details.number}>
                       {itemComp}
                     </div>
                   )

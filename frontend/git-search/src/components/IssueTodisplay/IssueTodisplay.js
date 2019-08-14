@@ -19,16 +19,25 @@ export default class IssueTodisplay extends Component {
     }
     return (
       <div className="issue-to-display">
-              <div className="issue-title">
-              {title}
-              <p>Status: {state}</p>
-              <p>Created By: {userLogin}  <img src={userAvatar} alt={userLogin}  height="30" width="30"/></p>
+            <div className="issue-title">
+              <p className="issue-main-title">{title}</p>
+              <p>
+              <span className="title-element elment-tag" >Status:</span>
+              <span className="title-element" >{state}</span>
+              <span className="title-element elment-tag">By: </span>
+              <span className="title-element">{userLogin}  <img src={userAvatar} alt={userLogin}  height="30" width="30"/></span>
               
               {assigneeLogin &&
-                <p>Assigned To: {assigneeLogin} <img src={assigneeAvatar}  alt={assigneeLogin}  height="30" width="30"/></p>
+                <span>
+                <span className="title-element elment-tag" > Assigned To:</span>
+                <span className="title-element" >  {assigneeLogin} <img src={assigneeAvatar}  alt={assigneeLogin}  height="30" width="30"/></span> 
+                </span>
               }
+              </p>
             </div>
-            <Markdown source={body} />,
+            <p className="issue-body">
+            <Markdown source={body} />
+            </p>
             
       </div>
     )

@@ -70,16 +70,17 @@ curl 'http://localhost/api/notes?offset=0&max=25&sort=body'
 ```
 
 ```
-curl 'http://localhost/api/notes?offset=0&max=25&sort=body&query=fun'
+curl 'http://localhost/api/notes?offset=0&max=25&sort=body&query=fun'   
 ```
 
 ### Update a note
+```
 curl -i -H "Content-Type: application/json" -X PUT -d '{"body" : "Go have as much fun as you can!!!"}' http://localhost/api/notes/1
-
+```
 ### Delete a note
 curl  -H "Content-Type: application/json" -X DELETE http://localhost/api/notes/2
 
-# Fronend
+# frontend
 
 The Frontend is a React application that integrates with the Github REST API to search for issues in the Angular Github repo for the
 previous days (7 days be default).
@@ -107,9 +108,28 @@ cd springboot-react/frontend/git-search/
 ```
 npm install && npm start
 ```
+
+A browser tab should open on the the page (if not, visit this link in a browser):
+
+```
+http://localhost:3000/
+```
+
+To specify a different number of days to pull the issues, use the query parameter ```days```. For instance to pull the request for the last 25 days
+```http://localhost:3000?days=25```
+
+Then use the pagination element at the bottom of the page to move from one page to the next
+
 ### To run the tests  available, 
 Build the package
 ```
 npm test
 ```
 
+# Other considerations
+These are simple prototypes, and lack verious elements that would be needed in  real life applications
+## Backend
+Instead of using a ```query``` parameter to search matching notes, it would be best to use a search engine like Elasticsearch that offers much  higher speed as well as the flexibility of search parameter
+
+## Frontend
+A loader to indicate when a page is being loaded
