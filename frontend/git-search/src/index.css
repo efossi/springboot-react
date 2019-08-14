@@ -1,0 +1,207 @@
+/* - - - - - - - - - - - - - - - - - */
+/* Variables. - - - - - - - - - - -  */
+/* - - - - - - - - - - - - - - - - - */
+:root {
+  /* Colors */
+  --black: #000000;
+  --dark-gray: #444444;
+  --gray: #777777;
+  --light-gray: #dddddd;
+  --x-light-gray: #eeeeee;
+  --white: #ffffff;
+  --blue: #0e60c4;
+  --green: #0E500A;
+  --red: #9e1511;
+  --light-red: #e9d2d2;
+  --arc-blue: #005dc7;
+
+  /* Spacing */
+  --spacer--small: .5em;
+  --spacer: 1em;
+  --spacer--large: 2em;
+
+  /* Fonts */
+  --serif: 'Miller Headline', georgia, serif;
+  --serif--bold: 'Miller Headline Bold', georgia, serif;
+  --sans-serif: 'Benton Sans Condensed', Helvetica, Arial, sans-serif;
+  --sans-serif--bold: 'Benton Sans Condensed Bold', Helvetica, Arial, sans-serif;
+
+  /* Elements */
+  --button-color: var(--arc-blue);
+  --link-color: var(--arc-blue);
+}
+
+/* - - - - - - - - - - - - - - - - - */
+/* Fonts. - - - - - - - - - - - - -  */
+/* - - - - - - - - - - - - - - - - - */
+@font-face {
+  font-family: 'Miller Headline';
+  src:
+  url('./fonts/miller-regular.woff') format('woff'),
+  url('./fonts/miller-regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Miller Headline Bold';
+  src:
+  url('./fonts/miller-bold.woff') format('woff'),
+  url('./fonts/miller-bold.woff2') format('woff2');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Benton Sans Condensed';
+  src:
+  url('./fonts/BentonSansCond-Regular.woff') format('woff'),
+  url('./fonts/BentonSansCond-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Benton Sans Condensed Bold';
+  src:
+  url('./fonts/BentonSansCond-Bold.woff') format('woff'),
+  url('./fonts/BentonSansCond-Bold.woff2') format('woff2');
+  font-weight: 800;
+}
+
+/* - - - - - - - - - - - - - - - - - */
+/* Styles. - - - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - */
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans-serif);
+}
+a {
+  color: var(--link-color);
+}
+.pagination{
+  text-align: center;
+}
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
+}
+
+.contain {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.contain--slim {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.section-heading {
+  margin: 0 0 var(--spacer--small) 0;
+  font-weight: 700;
+}
+.site-footer .section-heading {
+  padding: var(--spacer--small);
+  background: var(--x-light-gray);
+}
+
+/* Header. */
+.site-header {
+  padding: var(--spacer--large);
+  margin-bottom: var(--spacer--small);
+  background: var(--white);
+  text-align: center;
+}
+
+.issue_section {
+  padding: var(--spacer) var(--spacer--small);
+  border-bottom: 1px solid var(--x-light-gray);
+}
+.issue_section:first-child {
+  border-top: 1px solid var(--x-light-gray);
+}
+.issue_section:last-child {
+  border-bottom: none;
+}
+
+.issue-title{
+  background-color: #f1f1f1;
+}
+
+/* Error Bar. */
+.error-bar {
+  padding: var(--spacer--small);
+  background: var(--light-red);
+  text-align: center;
+  color: var(--red);
+}
+
+/* Page Header */
+.page-header {
+	margin-top: var(--spacer);
+  margin-bottom: var(--spacer--large);
+  text-align: center;
+}
+.page-header--extra-tall  {
+	padding-top: 3em; /* to accomadate absence of Subscribe CTA */
+}
+.page-header h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 42px;
+}
+.page-header p {
+  font-size: 18px;
+}
+
+/* Footer. */
+.site-footer {
+  border-top: 1px solid var(--x-light-gray);
+}
+.site-footer__list {
+  list-style: none;
+  margin: 0 0 var(--spacer) 0;
+  padding: 0;
+}
+.site-footer__list-item {
+  padding: var(--spacer--small);
+  border-bottom: 1px solid var(--x-light-gray);
+}
+.site-footer__list-item:last-child {
+  border-bottom: none;
+}
+.site-footer__copyright {
+  padding-top: var(--spacer);
+  text-align: center;
+  color: var(--gray);
+}
+
+/* 768px Media Query. */
+@media(min-width: 768px) {
+  /* Footer. */
+  .site-footer {
+    padding-top: var(--spacer);
+  }
+  .site-footer .section-heading {
+    padding: var(--spacer--small);
+    background: none;
+  }
+  .site-footer__list-container {
+    float: left;
+    width: 25%;
+  }
+  .site-footer__list-item {
+    border-bottom: none;
+  }
+  .site-footer__copyright {
+    clear: both;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "document": true,
+    "fetch": true,
+    "alert": true,
+    "Headers": true,
+    "window": true
+  },
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": [0]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "git-search",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "https://github.com/efossi/git-search",
+  "homepage": "/",
+  "dependencies": {
+    "es6-symbol": "^3.1.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "axios": "^0.18.0",
+    "query-string": "^6.4.0",
+    "moment": "^2.24.0",
+    "react-moment": "^0.9.2",
+    "react-markdown": "^4.1.0"
+  },
+  "scripts": {
+    "start": "REACT_APP_ENVIRONMENT=localhost; react-scripts start",
+    "build": "REACT_APP_ENVIRONMENT=localhost; react-scripts build",
+    "build:sandbox": "REACT_APP_ENVIRONMENT=sandbox react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "postbuild": "postcss --use postcss-custom-properties --replace build/**/*.css",
+    "postbuild:sandbox": "postcss --use postcss-custom-properties --replace build/**/*.css"
+  },
+  "devDependencies": {
+    "es6-symbol": "^3.1.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "postcss-cli": "^6.0.1",
+    "postcss-custom-properties": "^8.0.8",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  }
+}
